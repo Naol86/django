@@ -206,7 +206,28 @@
 
     </nav>	
 </header>
-
+<section id="blog-section" class="bg-light padding-large">
+    <div class="container">
+        <div class="row">
+            {% for i in feature %}
+            <div class="post-item col-md-3">
+                <figure class="zoom-effect">
+                    <a href="single-post.html" class="zoom-in"><img src="{% static 'images/postitem1.jpg'%}" alt="stories" class="lgpostImg img-fluid' %}"></a>
+                </figure>
+                <div class="story-title-wrap mt-3">
+                    <div class="post-meta"><a href="blog.html">{{ i.name }}</a></div>
+                    <h3 class="story-title"><a href="single-post.html">{{ i.detail }}</a></h3>				
+                    <div class="entry-meta">
+                        <span class="author"><span class="sp">by</span><span class="author-name">Jenny Matt</span></span>
+                        <span class="meta-date"><span class="sp">-</span><time class="published" datetime="">Feb 12, 2022</time></span>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+</section>
 <section id="slider" class="position-relative padding-xlarge no-padding-top">
 
     <div class="container">

@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V16</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'Login/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--========================================================Login/=======================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--========================================================Login/=======================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/vendor/animate/animate.css' %}">
+<!--========================================================Login/=======================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--========================================================Login/=======================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/vendor/animsition/css/animsition.min.css' %}">
+<!--========================================================Login/=======================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/vendor/select2/select2.min.css' %}">
+<!--========================================================Login/=======================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/vendor/daterangepicker/daterangepicker.css' %}">
+<!--========================================================Login/=======================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'Login/css/main.css' %}">
+<!--========================================================Login/=======================================-->
+
+</head>
+<body> 	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('static/Login/images/bg-01.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Account Login
+				</span>
+                {% for message in messages %}
+                    <h5 class="login100-form-title p-b-41">{{ message }}</h5>
+                {% endfor %}
+                    <form method="POST" action="login" class="login100-form validate-form p-b-33 p-t-5">
+                        {% csrf_token %}
+                        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                            <input class="input100" type="text" name="username" placeholder="User name">
+                            <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                            <input class="input100" type="password" name="PASSWORD" placeholder="password">
+                            <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        </div>
+                        <div class="container-login100-form-btn m-t-32">
+                            <input type='submit' value='LOGIN' class="login100-form-btn" />
+                        </div>
+                    </form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html> 
+
+
+{% comment %} 
+<h1>Log IN now<h1>
+
+
+{% for message in messages %}
+<h3>{{ message }}</h3>
+{% endfor %}
+<form method='POST' action='login'>
+    {% csrf_token %}
+    <p>user name</p>
+    <input type='text' name='username' />
+    <p>password</p>
+    <input type='password' name='PASSWORD' /><br>
+    <input type='submit'/>
+</form>
+     {% endcomment %}
