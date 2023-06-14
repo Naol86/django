@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Enter Your Name</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+    <h1>What's Your Name?</h1>
+    <form method='POST' action='show'>
+        {%csrf_token%} 
+        <input type="text" name="text" placeholder="Enter Your Name">
+        {% comment %} <input type="text" idPOST'="name" placeholder="Enter your name"  name='text' /> {% endcomment %}
+        <br/><br/>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
